@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import TodoList from "./todo/TodoList";
 import {func} from "prop-types";
 import Context from "./context";
-// import AddTodo from "./todo/AddTodo";
 import Loader from "./Loader";
 import Modal from "./modal/Modal";
 
@@ -13,7 +12,7 @@ function App() {
     const [loading, setLoading] = React.useState(true)
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=88')
             .then(response => response.json())
             .then(todos => {
                  setTodos(todos)
@@ -46,7 +45,7 @@ function App() {
   return (
       <Context.Provider value={{removeTodo: removeTodo}}>
       <div className='wrapper'>
-        <h1>React todo</h1>
+        <h1>React todoshka</h1>
         <Modal></Modal>
 
           <React.Suspense fallback={<Loader></Loader>}>
@@ -63,3 +62,5 @@ function App() {
 }
 
 export default App;
+
+//todo json on server, add login
